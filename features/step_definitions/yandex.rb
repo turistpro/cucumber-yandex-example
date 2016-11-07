@@ -6,7 +6,6 @@ When(/^I will search for "(.*?)"$/) do |searchText|
     # fill_in 'Запрос', :with => searchText
     find("input[aria-label='Запрос']").set(searchText)
     click_button('Найти', exact: true)
-    page.save_screenshot 'screenshots/request.png'
     wait_for_ajax # This is new!
 end
 
@@ -15,5 +14,8 @@ Then(/^I should see "(.*?)"$/) do |expectedText|
 end
 
 Then(/^I save screenshot "([^"]*)"$/) do |filename|
-	page.save_screenshot "screenshots/#{filename}.png"
+	# page.save_screenshot "screenshots/#{filename}.png"
+        img64 = Capybara.current_session.driver.browser.screenshot_as(:base64) 
+        embed(img64, 'image/png')
+        # embed("screenshots/#{filename}.png", 'image/png')
 end
