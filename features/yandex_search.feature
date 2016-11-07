@@ -1,10 +1,13 @@
 # language: ru
 Функционал: Поиск в Яндексе
 
-Сценарий: Search for agile     
-	Дано  I am on the Yandex homepage
-	Если  I save screenshot "homepage"
-	Если  I will search for "agile"
-	Тогда I save screenshot "results"
-	И     I should see "agile"
+Сценарий: Найти agile     
+	Дано  Я на главной странице Яндекса
+	Если  Я введу в поиске "agile"
+	Тогда Я увижу "agile"
 
+
+Сценарий: Найти cucumber    
+	Дано  Я на главной странице Яндекса
+	Если  Я введу в поиске "cucumber"
+	Тогда Я увижу "cucumber"

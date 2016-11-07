@@ -1,1 +1,4 @@
-html_report: --format progress --format html --out=report<%= ENV['TEST_ENV_NUMBER'] %>.html
+default: --format pretty -p html_report
+html_report:  --format html --out=report<%= ENV['TEST_ENV_NUMBER'] %>.html
+json_report:  --format json --out=report<%= ENV['TEST_ENV_NUMBER'] %>.html
+jenkins: --format pretty -p json_report
