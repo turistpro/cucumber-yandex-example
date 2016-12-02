@@ -19,6 +19,6 @@ end
 Then(/^Сохранить скриншот "([^"]*)"$/) do |filename|
 	# page.save_screenshot "screenshots/#{filename}.png"
         img64 = Capybara.current_session.driver.browser.screenshot_as(:base64) 
-        embed(img64, 'image/png')
+        embed("data:image/png;base64,#{img64}", 'image/png')
         # embed("screenshots/#{filename}.png", 'image/png')
 end
