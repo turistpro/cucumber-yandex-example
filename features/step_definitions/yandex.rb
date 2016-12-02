@@ -17,8 +17,8 @@ Then(/^Я увижу "(.*?)"$/) do |expectedText|
 end
 
 Then(/^Сохранить скриншот "([^"]*)"$/) do |filename|
-	# page.save_screenshot "screenshots/#{filename}.png"
-        img64 = Capybara.current_session.driver.browser.screenshot_as(:base64) 
-        embed("data:image/png;base64,#{img64}", 'image/png')
-        # embed("screenshots/#{filename}.png", 'image/png')
+	page.save_screenshot "screenshots/#{filename}.png"
+        # img64 = Capybara.current_session.driver.browser.screenshot_as(:base64) 
+        # embed("data:image/png;base64,#{img64}", 'image/png')
+        embed("screenshots/#{filename}.png", 'image/png', filename)
 end
