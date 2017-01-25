@@ -23,8 +23,7 @@ Capybara.register_driver :selenium do |app|
 end
 
 # Capybara.javascript_driver = :poltergeist
-Capybara.default_driver = :selenium
+Capybara.default_driver = :poltergeist
 Capybara.run_server = false
 
-Capybara.current_session.current_window.resize_to(1280,1024) # width, height
 
