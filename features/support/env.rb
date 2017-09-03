@@ -23,7 +23,7 @@ Capybara.register_driver :selenium do |app|
 end
 
 # Capybara.javascript_driver = :poltergeist
-Capybara.default_driver = :poltergeist
+Capybara.default_driver = :selenium_chrome_headless
 Capybara.run_server = false
 
 
